@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<math.h>
 
 char isEven(int);
 char isOdd(int);
@@ -7,6 +8,7 @@ long long int cube(int);
 int hcf(int, int);
 int lcm(int, int);
 double simple_interest(float, float, float);
+double compound_interest(float, float, float);
 
 char isEven(int num ) {
   return !(num % 2);
@@ -53,6 +55,11 @@ double simple_interest(float sum ,float rate,float time) {
   return (sum * rate * time ) / 100;
 }
 
+double compound_interest(float sum ,float rate,float time) {
+  int amount = sum * pow(( 1 +(rate / 100)), time);
+  return amount - sum;
+}
+
 int main(void) {
   int num;
 
@@ -76,9 +83,6 @@ int main(void) {
   printf("Enter two number to find there HCF : \n");
   scanf("%d %d",&num1, &num2);
   printf("The HCF of %d and %d is %d\n",num1,num2, hcf(num1, num2));
-
-  printf("Enter two number to find there LCM : \n");
-  scanf("%d %d",&num1, &num2);
   printf("The LCM of %d and %d is %d\n",num1,num2, lcm(num1, num2));
 
   float sum, rate, time;
@@ -89,6 +93,7 @@ int main(void) {
   printf("Enter time :\n");
   scanf("%f", &time);
   printf("The simple Interest for sum %f at rate of %f for time %f is %lf\n", sum, rate, time,simple_interest(sum , rate, time) );
+  printf("The compound Interest yearly for sum %f at rate of %f for time %f is %lf\n", sum, rate, time,compound_interest(sum , rate, time) );
   
   return 0;
 }
