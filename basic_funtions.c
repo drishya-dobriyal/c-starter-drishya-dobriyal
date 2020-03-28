@@ -4,6 +4,7 @@ char isEven(int);
 char isOdd(int);
 long long int square(int);
 long long int cube(int);
+int hcf(int, int);
 
 char isEven( num ) {
   return !(num % 2);
@@ -19,6 +20,27 @@ long long int square(num) {
 
 long long int cube(num) {
   return num * square(num);
+}
+
+int hcf(num1, num2 ) {
+  int rem;
+  if(num1 < num2) {
+    num1  = num1 + num2;
+    num2 = num1 - num2;
+    num1 = num1 - num2;
+  }
+  if(!num2) {
+    return num1;
+  }
+  
+  while(1){
+  rem = num1 % num2;
+  if(rem == 0) {
+    return num2;
+  }
+  num1 = num2;
+  num2 = rem;
+  }
 }
 
 int main(void) {
@@ -40,6 +62,10 @@ int main(void) {
   scanf("%d",&num);
   printf("The cube of %d id %lld\n",num, cube(num));
 
+  int num1, num2;
+  printf("Enter two number to find there HCF : \n");
+  scanf("%d %d",&num1, &num2);
+  printf("The HCF of %d and %d id %d\n",num1,num2, hcf(num1, num2));
 
   return 0;
 }
