@@ -1,12 +1,13 @@
 #include <stdio.h>
 
-int isEven(int);
+char isEven(int);
+char isOdd(int);
 
-int isEven( num ) {
+char isEven( num ) {
   return !(num % 2);
 }
 
-int isOdd( num ) {
+char isOdd( num ) {
   return !isEven(num);
 }
 
@@ -15,20 +16,10 @@ int main(void) {
 
   printf("Enter a number to check whether it is Even or not : ");
   scanf("%d",&num);
-  if(isEven(num)) {
-    printf("The num is Even\n");
-  }
-  else {
-    printf("The num is Not Even\n");
-  }
+  printf("%s", isEven(num) ? "The num is Even\n" : "The num is Not Even\n");
 
   printf("Enter a number to check whether it is odd or not : ");
   scanf("%d",&num);
-  if(isOdd(num)) {
-    printf("The num is odd\n");
-  }
-  else {
-    printf("The num is Not odd\n");
-  }
+  printf("%s", isOdd(num) ? "The num is Odd\n" : "The num is Not Odd\n");
   return 0;
 }
