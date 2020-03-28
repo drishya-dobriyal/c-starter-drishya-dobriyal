@@ -3,8 +3,8 @@
 int fact(int);
 char isOdd(int);
 int print_fibonacci_series(int);
-int print_oddNum_series(int num);
-int print_EvenNum_series(int num);
+int print_oddNum_series(int);
+int print_EvenNum_series(int);
 
 char isOdd(int num) {
   return num % 2;
@@ -31,7 +31,7 @@ int print_fibonacci_series(int num) {
   return 0;
 }
 
-int print_oddNum_series(num) {
+int print_oddNum_series(int num) {
   printf("Odd numbers till %d\n", num);
   int currNum = 1;
   while( currNum <= num ) {
@@ -43,7 +43,7 @@ int print_oddNum_series(num) {
   return 0;
 }
 
-int print_EvenNum_series(num) {
+int print_EvenNum_series(int num) {
   printf("Even numbers till %d\n", num);
   int currNum = 0;
   while( currNum <= num ) {
