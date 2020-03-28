@@ -9,6 +9,7 @@ int hcf(int, int);
 int lcm(int, int);
 double simple_interest(float, float, float);
 double compound_interest(float, float, float);
+double convert_fahrenheit_to_centigrade(float);
 
 char isEven(int num ) {
   return !(num % 2);
@@ -60,6 +61,10 @@ double compound_interest(float sum ,float rate,float time) {
   return amount - sum;
 }
 
+double convert_fahrenheit_to_centigrade( float temp ) {
+  return ((temp - 32) * 5/9);
+}
+
 int main(void) {
   int num;
 
@@ -95,5 +100,9 @@ int main(void) {
   printf("The simple Interest for sum %f at rate of %f for time %f is %lf\n", sum, rate, time,simple_interest(sum , rate, time) );
   printf("The compound Interest yearly for sum %f at rate of %f for time %f is %lf\n", sum, rate, time,compound_interest(sum , rate, time) );
   
+  float temp;
+  printf("Enter temp in fahrenheit\n");
+  scanf("%f", &temp);
+  printf(" %f fahrenheit in centigrade  is %lf ", temp, convert_fahrenheit_to_centigrade(temp));
   return 0;
 }
