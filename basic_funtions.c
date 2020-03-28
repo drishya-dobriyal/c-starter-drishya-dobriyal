@@ -6,24 +6,25 @@ long long int square(int);
 long long int cube(int);
 int hcf(int, int);
 int lcm(int, int);
+double simple_interest(float, float, float);
 
-char isEven( num ) {
+char isEven(int num ) {
   return !(num % 2);
 }
 
-char isOdd( num ) {
+char isOdd(int num ) {
   return !isEven(num);
 }
 
-long long int square(num) {
+long long int square( int num) {
   return num * num;
 }
 
-long long int cube(num) {
+long long int cube( int num) {
   return num * square(num);
 }
 
-int hcf(num1, num2 ) {
+int hcf( int num1,int  num2 ) {
   int rem;
   if(num1 < num2) {
     num1  = num1 + num2;
@@ -44,8 +45,12 @@ int hcf(num1, num2 ) {
   }
 }
 
-int lcm(num1, num2) {
+int lcm(int num1,int  num2) {
   return (num1 * num2) / hcf(num1, num2);
+}
+
+double simple_interest(float sum ,float rate,float time) {
+  return (sum * rate * time ) / 100;
 }
 
 int main(void) {
@@ -75,5 +80,15 @@ int main(void) {
   printf("Enter two number to find there LCM : \n");
   scanf("%d %d",&num1, &num2);
   printf("The LCM of %d and %d is %d\n",num1,num2, lcm(num1, num2));
+
+  float sum, rate, time;
+  printf("Enter sum :\n");
+  scanf("%f", &sum);
+  printf("Enter rate :\n");
+  scanf("%f", &rate);
+  printf("Enter time :\n");
+  scanf("%f", &time);
+  printf("The simple Interest for sum %f at rate of %f for time %f is %lf\n", sum, rate, time,simple_interest(sum , rate, time) );
+  
   return 0;
 }
