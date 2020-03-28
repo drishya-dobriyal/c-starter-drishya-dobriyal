@@ -67,18 +67,18 @@ int print_table(int multiplicand,int num) {
 
 int main(void) {
   int num;
-  // printf("Enter Num to find its factorial : \n");
-  // scanf("%d",&num);
-  // printf("The factorial of %d is %d\n", num, fact(num));
+  printf("Enter Num to find its factorial : \n");
+  scanf("%d",&num);
+  printf("The factorial of %d is %d\n", num, fact(num));
 
-  // printf("Enter num of terms you want to print fibonacci \n");
-  // scanf("%d",&num);
-  // print_fibonacci_series(num);
+  printf("Enter num of terms you want to print fibonacci \n");
+  scanf("%d",&num);
+  print_fibonacci_series(num);
 
-  // printf("Enter num till you want to print \n");
-  // scanf("%d",&num);
-  // print_oddNum_series(num);
-  // print_EvenNum_series(num);
+  printf("Enter num till you want to print \n");
+  scanf("%d",&num);
+  print_oddNum_series(num);
+  print_EvenNum_series(num);
 
   int multiplicand;
   printf("Enter multiplicand : \n");
