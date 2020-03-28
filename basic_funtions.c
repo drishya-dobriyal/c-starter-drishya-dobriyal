@@ -3,6 +3,7 @@
 char isEven(int);
 char isOdd(int);
 long long int square(int);
+long long int cube(int);
 
 char isEven( num ) {
   return !(num % 2);
@@ -38,6 +39,7 @@ int main(void) {
   printf("Enter a number to find it's cube : \n");
   scanf("%d",&num);
   printf("The cube of %d id %lld\n",num, cube(num));
+
 
   return 0;
 }
