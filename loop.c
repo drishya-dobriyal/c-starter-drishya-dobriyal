@@ -53,7 +53,7 @@ int print_oddNum_series(int num) {
 
 int print_EvenNum_series(int num) {
   printf("Even numbers to %d\n", num);
-  print_num_in_range_for_step(0,num, 2);
+  print_num_in_range_for_step(2,num, 2);
   return 0;
 }
 
@@ -139,7 +139,7 @@ int main(void) {
   scanf("%d %d", &from, &to);
   print_oddNum_range(from, to);
 
-  printf("Enter two numbers for range for odd number of series and the step :");
+  printf("Enter two numbers for range for number of series and the step :");
   scanf("%d %d %d", &from, &to, &step);
   print_num_in_range_for_step(from, to, step);
 
