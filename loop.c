@@ -6,6 +6,7 @@ int print_oddNum_series(int);
 int print_EvenNum_series(int);
 int print_table(int, int);
 int  add_n_numbers(int);
+int  product_n_numbers(int);
 
 int fact(int num ) {
   if(num <= 1) {
@@ -68,6 +69,17 @@ int  add_n_numbers(int count) {
   return sum;
 }
 
+int  product_n_numbers(int count) {
+  int product = 1;
+  int num;
+  for(int term = 0; term < count; term++){
+    printf("Enter number : ");
+    scanf("%d",&num);
+    product *= num;
+  }
+  return product;
+}
+
 int main(void) {
   int num;
   printf("Enter Num to find its factorial : \n");
@@ -94,4 +106,5 @@ int main(void) {
   printf("Enter total numbers you wanted to add :\n");
   scanf("%d", &count);
   printf("The Sum is : %d\n", add_n_numbers(count));
+  printf("The Product is : %d\n", product_n_numbers(count));
 }
