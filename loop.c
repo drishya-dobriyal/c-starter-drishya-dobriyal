@@ -1,15 +1,10 @@
 #include <stdio.h>
 
 int fact(int);
-char isOdd(int);
 int print_fibonacci_series(int);
 int print_oddNum_series(int);
 int print_EvenNum_series(int);
 int print_table(int, int);
-
-char isOdd(int num) {
-  return num % 2;
-}
 
 int fact(int num ) {
   if(num <= 1) {
@@ -36,9 +31,7 @@ int print_oddNum_series(int num) {
   printf("Odd numbers till %d\n", num);
   int currNum = 1;
   while( currNum <= num ) {
-    if(isOdd(currNum)){
-      printf(" %d \n", currNum);
-    }
+    printf(" %d \n", currNum);
     currNum += 2;
   }
   return 0;
@@ -48,9 +41,7 @@ int print_EvenNum_series(int num) {
   printf("Even numbers till %d\n", num);
   int currNum = 0;
   while( currNum <= num ) {
-    if( !isOdd(currNum)){
-      printf(" %d \n", currNum);
-    }
+    printf(" %d \n", currNum);
     currNum += 2;
   }
   return 0;
