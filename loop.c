@@ -30,25 +30,26 @@ int print_fibonacci_series(int num) {
   return 0;
 }
 
-int print_oddNum_range(int from, int till) {
+int print_alternate_num_range(int from, int till) {
   for( int num = from; num <= till; num += 2){
     printf(" %d \n",num);
   }
   return 0;
 }
 
+int print_oddNum_range( int from, int till ) {
+ from = (from % 2 == 0) ? from + 1 : from;
+  return print_alternate_num_range(from , till);
+}
+
 int print_oddNum_series(int num) {
   printf("Odd numbers till %d\n", num);
-  return print_oddNum_range( 1, num);
+  return print_alternate_num_range( 1, num);
 }
 
 int print_EvenNum_series(int num) {
   printf("Even numbers till %d\n", num);
-  int currNum = 0;
-  while( currNum <= num ) {
-    printf(" %d \n", currNum);
-    currNum += 2;
-  }
+  print_alternate_num_range(0,num);
   return 0;
 }
 
@@ -85,31 +86,31 @@ int  product_n_numbers(int count) {
 
 int main(void) {
   int num;
-  printf("Enter Num to find its factorial : \n");
-  scanf("%d",&num);
-  printf("The factorial of %d is %d\n", num, fact(num));
+  // printf("Enter Num to find its factorial : \n");
+  // scanf("%d",&num);
+  // printf("The factorial of %d is %d\n", num, fact(num));
 
-  printf("Enter num of terms you want to print fibonacci \n");
-  scanf("%d",&num);
-  print_fibonacci_series(num);
+  // printf("Enter num of terms you want to print fibonacci \n");
+  // scanf("%d",&num);
+  // print_fibonacci_series(num);
 
   printf("Enter num till you want to print \n");
   scanf("%d",&num);
   print_oddNum_series(num);
   print_EvenNum_series(num);
 
-  int multiplicand;
-  printf("Enter multiplicand : \n");
-  scanf("%d",&multiplicand);
-  printf("Enter num : \n");
-  scanf("%d", &num);
-  print_table(multiplicand,num);
+  // int multiplicand;
+  // printf("Enter multiplicand : \n");
+  // scanf("%d",&multiplicand);
+  // printf("Enter num : \n");
+  // scanf("%d", &num);
+  // print_table(multiplicand,num);
   
-  int count;
-  printf("Enter total numbers you wanted to add :\n");
-  scanf("%d", &count);
-  printf("The Sum is : %d\n", add_n_numbers(count));
-  printf("The Product is : %d\n", product_n_numbers(count));
+  // int count;
+  // printf("Enter total numbers you wanted to add :\n");
+  // scanf("%d", &count);
+  // printf("The Sum is : %d\n", add_n_numbers(count));
+  // printf("The Product is : %d\n", product_n_numbers(count));
 
   int from, till;
   printf("Enter two numbers for range for odd number of series :");
