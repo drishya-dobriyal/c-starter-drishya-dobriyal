@@ -5,6 +5,7 @@ int print_fibonacci_series(int);
 int print_oddNum_series(int);
 int print_EvenNum_series(int);
 int print_table(int, int);
+int  add_n_numbers(int);
 
 int fact(int num ) {
   if(num <= 1) {
@@ -56,6 +57,17 @@ int print_table(int multiplicand,int num) {
   return 0;
 }
 
+int  add_n_numbers(int count) {
+  int sum = 0;
+  int num;
+  for(int term = 0; term < count; term++){
+    printf("Enter number : ");
+    scanf("%d",&num);
+    sum += num;
+  }
+  return sum;
+}
+
 int main(void) {
   int num;
   printf("Enter Num to find its factorial : \n");
@@ -77,4 +89,9 @@ int main(void) {
   printf("Enter num : \n");
   scanf("%d", &num);
   print_table(multiplicand,num);
+  
+  int count;
+  printf("Enter total numbers you wanted to add :\n");
+  scanf("%d", &count);
+  printf("The Sum is : %d\n", add_n_numbers(count));
 }
