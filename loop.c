@@ -8,7 +8,7 @@ int print_table(int, int);
 int add_n_numbers(int);
 int product_n_numbers(int);
 int print_oddNum_range(int, int);
-int print_alternate_num_range(int, int);
+int print_num_in_range_for_step(int, int,int);
 
 int fact(int num ) {
   if(num <= 1) {
@@ -31,8 +31,8 @@ int print_fibonacci_series(int num) {
   return 0;
 }
 
-int print_alternate_num_range(int from, int till) {
-  for( int num = from; num <= till; num += 2){
+int print_num_in_range_for_step(int from, int till,int step ) {
+  for( int num = from; num <= till; num += step){
     printf(" %d \n",num);
   }
   return 0;
@@ -41,17 +41,17 @@ int print_alternate_num_range(int from, int till) {
 int print_oddNum_range( int from, int till ) {
   printf("Odd numbers from %d to %d :\n", from , till);
   from = (from % 2 == 0) ? from + 1 : from;
-  return print_alternate_num_range(from , till);
+  return print_num_in_range_for_step(from , till, 2);
 }
 
 int print_oddNum_series(int num) {
   printf("Odd numbers till %d\n", num);
-  return print_alternate_num_range( 1, num);
+  return print_num_in_range_for_step( 1, num, 2);
 }
 
 int print_EvenNum_series(int num) {
   printf("Even numbers till %d\n", num);
-  print_alternate_num_range(0,num);
+  print_num_in_range_for_step(0,num, 2);
   return 0;
 }
 
@@ -114,8 +114,12 @@ int main(void) {
   printf("The Sum is : %d\n", add_n_numbers(count));
   printf("The Product is : %d\n", product_n_numbers(count));
 
-  int from, till;
+  int from, till, step;
   printf("Enter two numbers for range for odd number of series :");
   scanf("%d %d", &from, &till);
   print_oddNum_range(from, till);
+
+  printf("Enter two numbers for range for odd number of series and the step :");
+  scanf("%d %d %d", &from, &till, &step);
+  print_num_in_range_for_step(from, till, step);
 }
