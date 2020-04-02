@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int fact(int);
-int print_series(int *arr, int length);
+int print_series(int * int length);
 int get_fibonacci_series( int *, int );
 int print_oddNum_series(int);
 int print_oddNum_series_reverse(int);
