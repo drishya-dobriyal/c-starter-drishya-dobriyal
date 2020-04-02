@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int fact(int);
-int print_fibonacci_series(int);
+int get_fibonacci_series( int *, int );
 int print_oddNum_series(int);
 int print_oddNum_series_reverse(int);
 int print_EvenNum_series(int);
@@ -19,16 +19,14 @@ int fact(int num ) {
   return num * fact( num - 1);
 }
 
-int print_fibonacci_series(int num) {
+int get_fibonacci_series( int *arr, int num_of_term) {
   int prevTerm = -1;
-  int currterm = 1;
-  int numOfTerm = 0;
-  while(numOfTerm != num) {
+  int currTerm = 1;
+  for(int i = 0; i < num_of_term; i++) {
     int temp = prevTerm;
-    prevTerm = currterm;
-    currterm = temp + prevTerm;
-    printf(" %d \n", currterm);
-    numOfTerm +=1;
+    prevTerm = currTerm;
+    currTerm = temp + prevTerm;
+    arr[i] = currTerm;
   }
   return 0;
 }
@@ -112,9 +110,14 @@ int main(void) {
   scanf("%d",&num);
   printf("The factorial of %d is %d\n", num, fact(num));
 
+  int num_of_term;
   printf("Enter num of terms you want to print fibonacci \n");
-  scanf("%d",&num);
-  print_fibonacci_series(num);
+  scanf("%d", &num_of_term);
+  int arr[num_of_term];
+  get_fibonacci_series(arr, num_of_term);
+  for(int i = 0; i < num_of_term; i++) {
+    printf(" %d \n", arr[i]);
+  }
 
   printf("Enter num to you want to print \n");
   scanf("%d",&num);
