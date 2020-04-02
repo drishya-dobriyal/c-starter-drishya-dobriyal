@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int fact(int);
+int print_series(int *arr, int length);
 int get_fibonacci_series( int *, int );
 int print_oddNum_series(int);
 int print_oddNum_series_reverse(int);
@@ -17,6 +18,13 @@ int fact(int num ) {
     return 1;
   }
   return num * fact( num - 1);
+}
+
+int print_series(int *arr, int length) {
+  for( int i = 0; i < length; i++ ) {
+    printf(" %d \n", arr[i]);
+  }
+  return 0;
 }
 
 int get_fibonacci_series( int *arr, int num_of_term) {
@@ -115,10 +123,8 @@ int main(void) {
   scanf("%d", &num_of_term);
   int arr[num_of_term];
   get_fibonacci_series(arr, num_of_term);
-  for(int i = 0; i < num_of_term; i++) {
-    printf(" %d \n", arr[i]);
-  }
-
+  print_series(arr, num_of_term );
+  
   printf("Enter num to you want to print \n");
   scanf("%d",&num);
   print_oddNum_series(num);
